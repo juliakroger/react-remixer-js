@@ -1491,6 +1491,11 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
+"@siteremix/remixer@^0.3.25":
+  version "0.3.25"
+  resolved "https://registry.yarnpkg.com/@siteremix/remixer/-/remixer-0.3.25.tgz#15ae5865e681ecfcc9f37f1f32cf3d28d15236b0"
+  integrity sha512-KHhLPj3BQSIVzbtxp4hroanx6kTiq4TNMx9/qeLLLC96ij7K1F7gGbSkOAUP+A58XZKzxLjbqgzb8jc4S3Ki4g==
+
 "@surma/rollup-plugin-off-main-thread@^1.1.1":
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/@surma/rollup-plugin-off-main-thread/-/rollup-plugin-off-main-thread-1.4.2.tgz#e6786b6af5799f82f7ab3a82e53f6182d2b91a58"
