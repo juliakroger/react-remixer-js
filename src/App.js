@@ -3,6 +3,7 @@ import "./App.css";
 import SimpleRemixerAnimation from "./remixers/SimpleRemixerAnimation";
 import SelectRemixerAnimate from "./remixers/SelectRemixerAnimate";
 import SelectRemixerAnimateIn from "./remixers/SelectRemixerAnimateIn";
+import SimpleRemixerAnimationDisableAndEnable from "./remixers/SimpleRemixerAnimationDisableAndEnable";
 
 const App = () => {
   return (
@@ -10,6 +11,7 @@ const App = () => {
       <SimpleRemixerAnimation />
       <SelectRemixerAnimate />
       <SelectRemixerAnimateIn />
+      <SimpleRemixerAnimationDisableAndEnable />
     </div>
   );
 };
