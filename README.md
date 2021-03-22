@@ -3,7 +3,9 @@
 Project to test [Remixer JS](https://github.com/siteremix/RemixerJS) library utilities.
 
 Install dependences
-`# yarn`
+
+`yarn`
 
 Run project
-`# yarn start`
+
+`yarn start`
