@@ -32,3 +32,11 @@ html {
   border-radius: 2px;
   color: #bfc0c2;
 }
+
+.button {
+  padding: 10px;
+  background-color: #3e4148;
+  border: transparent;
+  border-radius: 2px;
+  color: #bfc0c2;
+}

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Remixer from "@siteremix/remixer";
 import SimpleRemixerAnimation from "./remixers/SimpleRemixerAnimation";
 import SelectRemixerAnimate from "./remixers/SelectRemixerAnimate";
@@ -7,6 +7,7 @@ import SimpleRemixerAnimationDisableAndEnable from "./remixers/SimpleRemixerAnim
 import "./App.css";
 
 const App = () => {
+  const [hasBorder, setHasBorder] = useState(false);
   useEffect(() => {
     new Remixer(".card")
       .styles({
@@ -20,12 +21,37 @@ const App = () => {
       .run();
   }, []);
 
+  const addBorderToCards = () => {
+    if (hasBorder) {
+      new Remixer(".card")
+        .styles({
+          border: "none",
+          boxShadow: "none",
+        })
+        .run();
+    } else {
+      new Remixer(".card")
+        .styles({
+          border: "1px solid #909195",
+          boxShadow: "0 0 4px 0 #909195",
+        })
+        .run();
+    }
+
+    setHasBorder(!hasBorder);
+  };
+
   return (
-    <div className="cards-row">
-      <SimpleRemixerAnimation />
-      <SelectRemixerAnimate />
-      <SelectRemixerAnimateIn />
-      <SimpleRemixerAnimationDisableAndEnable />
+    <div>
+      <button className="button" onClick={addBorderToCards}>
+        {hasBorder ? "Remove border from cards" : "Add border to cards"}
+      </button>
+      <div className="cards-row">
+        <SimpleRemixerAnimation />
+        <SelectRemixerAnimate />
+        <SelectRemixerAnimateIn />
+        <SimpleRemixerAnimationDisableAndEnable />
+      </div>
     </div>
   );
 };
