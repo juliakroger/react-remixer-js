@@ -37,6 +37,14 @@ html {
   padding: 10px;
   background-color: #3e4148;
   border: transparent;
-  border-radius: 2px;
+  border-radius: 4px;
   color: #bfc0c2;
+}
+
+.color-picker {
+  margin-left: 10px;
+  padding: 17px;
+  background-color: #3e4148;
+  border: transparent;
+  border-radius: 4px;
 }

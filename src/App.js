@@ -8,6 +8,7 @@ import "./App.css";
 
 const App = () => {
   const [hasBorder, setHasBorder] = useState(false);
+  const [cardBackgroundColor, setCardBackgroundColor] = useState("#20232a");
   useEffect(() => {
     new Remixer(".card")
       .styles({
@@ -15,11 +16,11 @@ const App = () => {
         padding: "10px",
         width: "300px",
         height: "300px",
-        backgroundColor: "#20232a",
+        backgroundColor: cardBackgroundColor,
         borderRadius: "10px",
       })
       .run();
-  }, []);
+  }, [cardBackgroundColor]);
 
   const addBorderToCards = () => {
     if (hasBorder) {
@@ -31,10 +32,13 @@ const App = () => {
         .run();
     } else {
       new Remixer(".card")
-        .styles({
-          border: "1px solid #909195",
-          boxShadow: "0 0 4px 0 #909195",
-        })
+        .animateStyles(
+          {
+            border: "2px solid #909195",
+            boxShadow: "0 0 4px 0 #909195",
+          },
+          { duration: "1s" }
+        )
         .run();
     }
 
@@ -43,9 +47,20 @@ const App = () => {
 
   return (
     <div>
-      <button className="button" onClick={addBorderToCards}>
-        {hasBorder ? "Remove border from cards" : "Add border to cards"}
-      </button>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <button className="button" onClick={addBorderToCards}>
+          {hasBorder ? "Remove border from cards" : "Add border to cards"}
+        </button>
+
+        <input
+          onChange={({ target }) => setCardBackgroundColor(target.value)}
+          className="color-picker"
+          type="color"
+          id="favcolor"
+          name="favcolor"
+          value={cardBackgroundColor}
+        ></input>
+      </div>
       <div className="cards-row">
         <SimpleRemixerAnimation />
         <SelectRemixerAnimate />
